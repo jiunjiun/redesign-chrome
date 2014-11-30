@@ -5,16 +5,13 @@
   "description": "redesign you page",
 
   "permissions": [
-    // "geolocation",
-    // "pageCapture",
-    // "tabs",
-    // "background"
-    // "http://*/*",
-    // "https://*/*",
+    "tabs",
+    "http://*/*",
+    "https://*/*"
   ],
   "background": {
     "page": "background.html",
-    "persistent": true
+    "persistent": false
   },
   "content_scripts" : [
     {
@@ -26,7 +23,7 @@
       ],
       "js": [
         "js/jquery.min.js",
-        "content_script.js"
+        "js/content_script.js"
       ],
       "all_frames" : false
     }
@@ -37,10 +34,16 @@
       "64": "images/icon_64.png",
      "128": "images/icon_128.png"
   },
-  "browser_action": {
-    "default_icon": "images/loading.png",
-    "default_title": "reDesign"
+  "page_action": {
+    "default_icon": {
+        "16": "images/icon_16.png",
+        "32": "images/icon_32.png",
+        "64": "images/icon_64.png",
+       "128": "images/icon_128.png"
+    },
+    // "default_title": "reDesign",
+    "default_popup": "html/popup.html"        // popup
   },
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
-  "options_page": "option.html"
+  "options_page": "html/option.html"
 }
