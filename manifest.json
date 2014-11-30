@@ -1,0 +1,46 @@
+{
+  "name": "reDesign",
+  "manifest_version": 2,
+  "version": "0.1",
+  "description": "redesign you page",
+
+  "permissions": [
+    // "geolocation",
+    // "pageCapture",
+    // "tabs",
+    // "background"
+    // "http://*/*",
+    // "https://*/*",
+  ],
+  "background": {
+    "page": "background.html",
+    "persistent": true
+  },
+  "content_scripts" : [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "exclude_matches": [
+        "*://redesign.jiunjiun.me/*"
+      ],
+      "js": [
+        "js/jquery.min.js",
+        "content_script.js"
+      ],
+      "all_frames" : false
+    }
+  ],
+  "icons": {
+      "16": "images/icon_16.png",
+      "32": "images/icon_32.png",
+      "64": "images/icon_64.png",
+     "128": "images/icon_128.png"
+  },
+  "browser_action": {
+    "default_icon": "images/loading.png",
+    "default_title": "reDesign"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "options_page": "option.html"
+}
