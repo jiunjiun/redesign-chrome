@@ -12,7 +12,6 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 
         sendResponse({styles: styles});
       }
-      console.log(message)
     }
 });
 
