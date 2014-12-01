@@ -1,0 +1,9 @@
+body { width: 150px; height: auto; }
+
+header { text-align: center; padding-bottom: 5px; border-bottom: 2px double #FF80AB; }
+
+#list { padding: 0 5px; }
+#list p { border-top: 1px dashed #F8BBD0; padding: 5px 5px; margin: 0; }
+#list p:first-child { border: 0; }
+#list a { font-size: 13px; color: #F50057; text-decoration: none; display: block; }
+#list a:hover { color: #C51162; }
